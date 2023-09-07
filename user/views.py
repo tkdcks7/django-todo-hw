@@ -7,10 +7,9 @@ from django.contrib.auth import authenticate, login, logout
 def sign_up(request):
     if request.method == "POST":
         username = request.POST["username"]
+        email = request.POST["email"]
         password = request.POST["password"]
-        print(username)
-        print(password)
-        User.objects.create_user(username=username, password=password)
+        User.objects.create_user(username=username, email=email, password=password)
         return redirect("/todo/")
     elif request.method == "GET":
         return render(request, "user/signup.html")

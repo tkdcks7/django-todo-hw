@@ -10,6 +10,7 @@
     <form action="/user/signup/" method="post">
         {% csrf_token %}
         <input type="text" name="username" placeholder="ID">
+        <input type="email" name="email" placeholder="Email">
         <input type="password" name="password" placeholder="PW">
         <button type="submit">Sign in</button>
     </form>
